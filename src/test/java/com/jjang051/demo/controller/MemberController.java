@@ -3,6 +3,7 @@ package com.jjang051.demo.controller;
 import com.jjang051.demo.dto.Member;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,6 +11,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping("/member")
 public class MemberController {
+
+  //@GetMapping("/info/{id}") // request mapping 있으니 member/info
+  //public String memberInfo(@PathVariable("id") String userId) {
+  // 이 경우는 @RequestParam이 아님
+  // Restful한 경우ㅡㅏ,ㅏㅏㅣㅎㅎㅎ
+
+  //  System.out.println(userId);
+  //  return "/member/login";
+  //}
 
   @GetMapping("/join")
   public String join(
