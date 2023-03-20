@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/member")
@@ -70,5 +71,12 @@ public class MemberController {
   @GetMapping("/delete")
   public String delete() {
     return "delete";
+  }
+
+  /** Controller + ResponseBody = RestController */
+  @GetMapping("/toJson01")
+  @ResponseBody
+  public String toJson() {
+    return "Hello Json";
   }
 }
