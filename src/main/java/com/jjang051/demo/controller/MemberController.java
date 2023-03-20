@@ -1,6 +1,7 @@
 package com.jjang051.demo.controller;
 
 import com.jjang051.demo.dto.Member;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/member")
+@Slf4j
 public class MemberController {
 
   @GetMapping("/info/{id}") //request mapping 있으니 member/info
@@ -37,6 +39,14 @@ public class MemberController {
   @GetMapping("/join02")
   public String join02(Member member) {
     System.out.println(member.toString());
+    return "member/join";
+  }
+
+  @GetMapping("/join03")
+  // RequestParam은 사실 생략이 가능하다
+  public String join03(String name, int age) {
+    //System.out.println(name + ", " + age);
+    log.info(name + ", " + age);
     return "member/join";
   }
 
